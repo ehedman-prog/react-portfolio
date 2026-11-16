@@ -1,4 +1,4 @@
-import "./Project.css";
+import "../styles/Project.css";
 function Project(props){
   
      return (

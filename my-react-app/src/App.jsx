@@ -7,14 +7,9 @@ function App() {
     <Project 
     title = "Animation" 
     screenshot = {animationAssignment} 
-    detials = "tech used"
-    writeup = "What does project do?
-
-        What did I learn?
-
-        My role role (if it was collaborative)?
-
-        Challenges I solved?"></Project> 
+    details = "tech used"
+    writeup = "What does project do? What did I learn? My role role (if it was collaborative)? Challenges I solved?">
+    </Project> 
     <Project />
     <Project />
     
