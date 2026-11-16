@@ -1,20 +1,21 @@
-
-import animationAssignment from "./assets/animationAssignment.png";
-import Project from "./components/Project.jsx"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Pages/Home.jsx";
+import About from "./Pages/About.jsx";
+import Portfolio from "./Pages/Portfolio.jsx"
+import Navbar from "./components/Navbar.jsx"
 function App() {
-  return [
+  return (
     <>
-    <Project 
-    title = "Animation" 
-    screenshot = {animationAssignment} 
-    details = "tech used"
-    writeup = "What does project do? What did I learn? My role role (if it was collaborative)? Challenges I solved?">
-    </Project> 
-    <Project />
-    <Project />
-    
+      <BrowserRouter>
+      <Navbar></Navbar>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+        </Routes>
+      </BrowserRouter>
     </>
-  ]
+  )
 }
 
 export default App;
