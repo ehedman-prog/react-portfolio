@@ -1,9 +1,9 @@
 function Home (){
-    return[
+    return(
         <div>
             <h2>Homepage</h2>
-        </div>
-    ]
+        </div> 
+    )
 }
 
 export default Home;
