@@ -14,7 +14,9 @@ function UseState() {
     return (
         <div>
             <h2>Portfolio</h2>
-            <button onClick={toggleShowProjects}>Preview Projects</button>
+            <button onClick={toggleShowProjects}>
+                {showProjects ? "Hide Projects" :"Preview Projects"}
+            </button>
             <br />
             {showProjects ? (
                 <>
