@@ -5,6 +5,7 @@ import PopUp from "../components/PopUp.jsx";
 
 function UseState() {
     const [showProjects, setShowProjects] = useState(false);
+    const [search, setSearch] = useState("");
     const toggleShowProjects = () => {
         if (showProjects) {
             setShowProjects(false);
@@ -12,6 +13,33 @@ function UseState() {
             setShowProjects(true);
         }
     }
+
+    const projects = [
+        {
+            title: "Animation",
+            screenshot: animationAssignment,
+            details: "HTML, CSS",
+            writeup: "A Halloween card with CSS animations.",
+            link: "insert link"
+        },
+
+        {
+            title: "Title 1",
+            screenshot: " insert image",
+            details: " insert details",
+            writeup: "insert writeup",
+            link: "insert link"
+        },
+
+        {
+            title: "Title 2",
+            screenshot: " insert image",
+            details: " insert details",
+            writeup: "insert writeup",
+            link: "insert link"
+        },
+    ];
+
     return (
         <div>
             <h2>Portfolio</h2>
@@ -19,16 +47,25 @@ function UseState() {
                 {showProjects ? "Hide Projects" : "Preview Projects"}
             </button>
             <br />
+            <input
+                className="portfolio__search"
+                type="text"
+                placeholder="Search projects..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+            />
             {showProjects ? (
                 <>
-                    <Project
-                        title="Animation"
-                        screenshot={animationAssignment}
-                        details="tech used"
-                        writeup="What does project do? What did I learn? My role role (if it was collaborative)? Challenges I solved?"
-                    ></Project>
-                    <Project />
-                    <Project />
+                    {projects.map((project) => (
+                        <Project
+                            key={project.title}
+                            title={project.title}
+                            screenshot={project.screenshot}
+                            details={project.details}
+                            writeup={project.writeup}
+                            link={project.link}
+                        />
+                    ))}
                 </>
             ) : null
             }
