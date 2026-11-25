@@ -41,12 +41,8 @@ function UseState() {
     ];
 
     return (
-        <div>
+        <div className="portfolio__content">
             <h2>Portfolio</h2>
-            <button onClick={toggleShowProjects}>
-                {showProjects ? "Hide Projects" : "Preview Projects"}
-            </button>
-            <br />
             <input
                 className="portfolio__search"
                 type="text"
@@ -54,9 +50,16 @@ function UseState() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
             />
+            <br />
+            <button onClick={toggleShowProjects}>
+                {showProjects ? "Hide Projects" : "Preview Projects"}
+            </button>
+            <br />
             {showProjects ? (
                 <>
-                    {projects.map((project) => (
+                    {projects.filter((project) => (project.title.toLocaleLowerCase().includes(search.toLowerCase())))
+                    
+                    .map((project) => (
                         <Project
                             key={project.title}
                             title={project.title}
